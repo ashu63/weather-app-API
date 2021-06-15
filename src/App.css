@@ -1,38 +1,268 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.good {
+  background-image: url("https://images.pexels.com/photos/746148/pexels-photo-746148.png?auto=compress&cs=tinysrgb&dpr=4&w=940"),
+  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+  background-blend-mode: overlay;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bad {
+  background-image: url("https://images.pexels.com/photos/373481/pexels-photo-373481.jpeg?auto=compress&cs=tinysrgb&dpr=3&w=940"),
+  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+  background-blend-mode: overlay;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.clouds {
+  background-image: url("https://images.pexels.com/photos/601798/pexels-photo-601798.jpeg?auto=compress&cs=tinysrgb&dpr=3&w=940"),
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+  background-blend-mode: overlay;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.haze {
+  background-image: url("https://images.pexels.com/photos/4406329/pexels-photo-4406329.jpeg?auto=compress&cs=tinysrgb&dpr=3&w=940"),
+  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+  background-blend-mode: overlay;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  color: white;
+  /* padding-right: 40px; */
+}
+
+.app__child {
+  padding-top: 20px;
+  position: relative;
+  /* min-width: 683px; */
+}
+
+.app__inputDiv {
+  display: flex;
+  align-items: center;
+  /* width: 43.5vw; */
+  border: 1px solid white;
+  border-radius: 3px;
+  padding-left: 10px;
+  position: relative;
+}
+.app__inputDiv > input {
+  background: transparent;
+  color: white;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 12px 13px;
+  border-left: 1px solid rgb(82, 77, 77);
+}
+.app__inputDiv > input::placeholder {
+  color: rgb(216, 209, 209);
+}
+.app__searchIcon {
+  padding: 4px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  font-size: medium !important;
+  cursor: pointer;
+  margin-right: 15px;
+}
+.submit__button {
+  width: 120px;
+  height: 5.6vh;
+  letter-spacing: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.1s ease-out;
+  opacity: .7;
+}
+.submit__button:hover {
+  opacity: 1;
+}
+.app__handleNoData {
+  background-color: rgba(243, 82, 82, 0.7);
+  padding: 10px;
+  display: inline-block;
+  width: 35.5vw;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 40px;
+}
+.app__handleNoDataDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #537895;
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+  padding: 10px 30px;
+  margin-top: 20px;
+  font-family: "Titillium Web", sans-serif;
+  border-radius: 4px;
+  box-shadow: 5px 2px 9px 5px rgba(49, 44, 44, 0.58);
+}
+.card > h4 {
+  font-size: large;
+  margin-bottom: 5px;
+}
+.card__after {
+  font-family: "Poppins", sans-serif;
+}
+.app__time {
+  color: rgb(172, 169, 169);
+  font-weight: bolder;
+}
+.app__cityName {
+  font-size: 25px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+.app__weatherDegree {
+  display: flex;
+  margin-top: 17px;
+  position: relative;
+}
+.app__sunIcon {
+  font-size: 5rem !important;
+  color: rgb(255, 255, 70);
+  margin-right: 1.6vw;
+}
+.app__moonIcon {
+  font-size: 5rem !important;
+  color: rgb(177, 177, 177);
+  margin-right: 1.6vw;
+}
+.app__sunDegree {
+  font-size: 2.3rem;
+  color: rgb(206, 206, 26);
+  font-weight: 900;
+}
+.app__degree {
+  position: absolute;
+  top: 38px;
+  left: 150px;
+  color: gray;
+}
+.app__right {
+  font-family: "Poppins", sans-serif;
+  margin-left: 30px;
+  flex-wrap: nowrap;
+}
+.app__handleError__button {
+  height: 2.56rem;
+  width: 10rem;
+  margin-top: 2.5rem;
+  margin-left: 10px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  color: black;
+  transition: all .2s ease-in;
+}
+.app__handleError__button:hover{
+  background-color: rgb(46, 46, 46);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.app__rightHoverState{
+  cursor: pointer;
+  transition: all .2s ease-in;
+  flex-wrap: nowrap;
+  position: relative;
 }
+.app__rightHoverState:hover{
+  transform: scale(1.06);
+  box-shadow: 2px 12px 7px -10px rgba(0,0,0,0.97);
+}
+.app__rightHoverState:hover .app__rightIcon{
+  /* color: rgb(225, 255, 57); */
+  color: rgb(166, 174, 194);
+}
+.app__rightIcon{
+  display: flex;
+  align-items: center; 
+  flex-wrap: nowrap;
+}
+.app__rightIcon2{
+  margin-right: 110px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+}
+.app__rightIcon3{
+  margin-right: 163px;
+}
+.app__rightIcon4{
+  margin-right: 143px;
+
+}
+.app__rightIcon5{
+  margin-right: 193px;
+
+}
+  
+
+
+@media only screen and (max-width: 800px){
+  .card{
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+  .app__rightIcon{
+    flex-wrap: nowrap;
+    font-size: 14px;
   }
+  .app__right{
+    margin-left: 0;
+  }
+  .app__rightIcon2{
+    font-size: 14px;
+    margin-right: 66px;
+
+  }
+  .app__rightIcon3{
+    font-size: 14px;
+    margin-right: 112px;
+
+  }
+  .app__rightIcon4{
+    font-size: 14px;
+    margin-right: 68px;
+
+  }
+  .app__rightIcon5{
+    font-size: 14px;
+  }
+  
 }
