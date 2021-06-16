@@ -26,12 +26,12 @@ function App() {
   const [getData, setGetData] = useState({});
   const [input, setInput] = useState("");
   const [state, setState] = useState("Talwara");
-  const [spinner, setSpinner] = useState(true);
+  // const [spinner, setSpinner] = useState(true);
 
   useEffect(() => {
     const fetchApi = async () => {
       const url = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=c100a76ad7932fbe4e2f4a545e78f9a2`
+        `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=${process.env.REACT_APP_WEATHERAPI}`
       );
       const convertJson = await url.json();
       console.log(convertJson);
@@ -134,6 +134,7 @@ function App() {
                   <p className="app__sunDegree">
                     {kelvinToCelcius(getData.main.temp)}{" "}
                     <span className="app__degree">℃</span>{" "}
+                  
                   </p>
                 </div>
                 <p
